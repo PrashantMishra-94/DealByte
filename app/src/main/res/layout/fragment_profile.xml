@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    tools:context=".fragment.ProfileFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/main"
+            app:expandedTitleMarginEnd="64.0dip"
+            app:expandedTitleMarginStart="48.0dip"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10.0dip"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llprofile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20.0dip">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/ivProfileImage"
+                            android:layout_width="90.0dip"
+                            android:layout_height="90.0dip"
+                            android:src="@drawable/ic_launcher_background"
+                            app:riv_oval="true" />
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/ivProfileImage"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20.0dip"
+                            android:layout_toRightOf="@id/ivProfileImage"
+                            android:drawablePadding="5.0dip"
+                            android:fontFamily="@font/coresans_cr_regular"
+                            android:lineSpacingExtra="2.0dip"
+                            android:maxLines="1"
+                            android:paddingTop="15.0dip"
+                            android:text="Elizabeth Sanders"
+                            android:textColor="#ffffffff"
+                            android:textSize="@dimen/_17ssp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvEmail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvUserName"
+                                android:layout_alignStart="@id/tvUserName"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20.0dip"
+                                android:layout_toRightOf="@id/ivProfileImage"
+                                android:drawablePadding="5.0dip"
+                                android:fontFamily="@font/coresans_cr_regular"
+                                android:lineSpacingExtra="2.0dip"
+                                android:maxLines="1"
+                                android:paddingTop="2.0dip"
+                                android:text="Organiser@gmail.com"
+                                android:textColor="#ffffffff"
+                                android:textSize="@dimen/_11ssp" />
+
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvEdit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20.0dip"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:background="@drawable/rounded_price"
+                            android:fontFamily="@font/coresans_cr_regular"
+                            android:maxLines="2"
+                            android:paddingLeft="@dimen/_15sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingRight="@dimen/_15sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:text="Edit"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/_14ssp" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/profielyt"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffffff"
+            android:orientation="vertical"
+            app:layout_collapseMode="pin">
+
+            <RelativeLayout
+                android:id="@+id/rlEarning"
+                android:layout_width="fill_parent"
+                android:layout_height="70.0dip"
+                android:layout_marginLeft="20.0dip"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/earningTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:maxLines="1"
+                    android:text="Total Earnings"
+                    android:textColor="#ff1a1a1a"
+                    android:textSize="@dimen/_15ssp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvEarningBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20.0dip"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:orientation="vertical"
+                    app:cardCornerRadius="20.0dip">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvEarning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/red"
+                        android:fontFamily="@font/coresans_cr_regular"
+                        android:gravity="center"
+                        android:paddingLeft="25.0dip"
+                        android:paddingRight="25.0dip"
+                        android:text="$0.00"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/_15ssp" />
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="25.0dip"
+                    android:background="#901a1a1a" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlKYC"
+                android:layout_width="fill_parent"
+                android:layout_height="70.0dip"
+                android:visibility="gone"
+                android:layout_marginLeft="20.0dip">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:maxLines="1"
+                    android:text="KYC"
+                    android:textColor="#ff1a1a1a"
+                    android:textSize="@dimen/_15ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvKYCStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="15.0dip"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawablePadding="5.0dip"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:gravity="center"
+                    android:text="Pending"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_15ssp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="25.0dip"
+                    android:background="#901a1a1a" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlAccount"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="70.0dip"
+                android:layout_marginLeft="20.0dip">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:maxLines="1"
+                    android:text="Account Details"
+                    android:textColor="#ff1a1a1a"
+                    android:textSize="@dimen/_15ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="15.0dip"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawablePadding="5.0dip"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_15ssp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="25.0dip"
+                    android:background="#901a1a1a" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlMyVouchers"
+                android:layout_width="fill_parent"
+                android:layout_height="70.0dip"
+                android:layout_marginLeft="20.0dip">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:maxLines="1"
+                    android:text="My Vouchers"
+                    android:textColor="#ff1a1a1a"
+                    android:textSize="@dimen/_15ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEventCreateCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="15.0dip"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawablePadding="5.0dip"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_15ssp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="25.0dip"
+                    android:background="#901a1a1a" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlChangePass"
+                android:layout_width="fill_parent"
+                android:layout_height="70.0dip"
+                android:layout_marginLeft="20.0dip">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:maxLines="1"
+                    android:text="Change Password"
+                    android:textColor="#ff1a1a1a"
+                    android:textSize="@dimen/_15ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="15.0dip"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawablePadding="5.0dip"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_15ssp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="25.0dip"
+                    android:background="#901a1a1a" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlCallCenter"
+                android:layout_width="fill_parent"
+                android:layout_height="70.0dip"
+                android:layout_marginLeft="20.0dip">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/eventGoingTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:maxLines="1"
+                    android:text="Call Center"
+                    android:textColor="#ff1a1a1a"
+                    android:textSize="@dimen/_15ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEventGoingCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="15.0dip"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawablePadding="5.0dip"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_15ssp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_below="@id/eventGoingTxt"
+                    android:layout_marginTop="20.0dip"
+                    android:background="#601a1a1a" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlLogOut"
+                android:layout_width="fill_parent"
+                android:layout_height="70.0dip"
+                android:layout_marginLeft="20.0dip">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:maxLines="1"
+                    android:text="Log Out"
+                    android:textColor="#ff1a1a1a"
+                    android:textSize="@dimen/_15ssp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Version 1.0"
+                    android:textColor="#ff1a1a1a"
+                    android:textSize="@dimen/_11ssp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

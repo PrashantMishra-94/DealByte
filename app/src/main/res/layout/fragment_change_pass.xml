@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".fragment.ChangePassFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/main"
+            app:expandedTitleMarginEnd="64.0dip"
+            app:expandedTitleMarginStart="48.0dip"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/ic_back_arrow"
+                        app:tint="@color/white" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/coresans_cr_medium"
+                        android:gravity="center"
+                        android:text="Change Password"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/_17ssp" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/coresans_cr_regular"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/_13ssp" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffffff"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp"
+            app:layout_collapseMode="pin">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/linear_account"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15.0dip"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.3"
+                        android:fontFamily="@font/coresans_cr_regular"
+                        android:text="Old Password"
+                        android:textColor="#ff1a1a1a"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edtOldPass"
+                        android:layout_width="0.0dip"
+                        android:layout_height="35.0dip"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/edit_background"
+                        android:gravity="center"
+                        android:inputType="textPassword"
+                        android:fontFamily="@font/coresans_cr_regular"
+                        android:maxLines="1"
+                        android:textColor="#ff1a1a1a"
+                        android:textSize="@dimen/_15ssp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_acc_num"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_account"
+                    android:layout_marginTop="15.0dip"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.3"
+                        android:fontFamily="@font/coresans_cr_regular"
+                        android:text="New Password"
+                        android:textColor="#ff1a1a1a"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edtNewPass"
+                        android:layout_width="0.0dip"
+                        android:layout_height="35.0dip"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/edit_background"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:inputType="textPassword"
+                        android:fontFamily="@font/coresans_cr_regular"
+                        android:textColor="#ff1a1a1a"
+                        android:textSize="@dimen/_15ssp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_bank_code"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linear_acc_num"
+                    android:layout_marginTop="15.0dip"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.3"
+                        android:fontFamily="@font/coresans_cr_regular"
+                        android:text="Confirm Password"
+                        android:textColor="#ff1a1a1a"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edtCOnfirmPass"
+                        android:layout_width="0.0dip"
+                        android:layout_height="35.0dip"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/edit_background"
+                        android:gravity="center"
+                        android:inputType="textPassword"
+                        android:fontFamily="@font/coresans_cr_regular"
+                        android:maxLines="1"
+                        android:textColor="#ff1a1a1a"
+                        android:textSize="@dimen/_15ssp" />
+                </LinearLayout>
+
+
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60.0dip"
+                    android:layout_below="@+id/linear_bank_code"
+                    android:layout_marginTop="50.0dip"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:fontFamily="@font/coresans_cr_regular"
+                    android:gravity="center"
+                    android:text="Update"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/_15ssp"
+                    app:backgroundTint="@color/red" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
