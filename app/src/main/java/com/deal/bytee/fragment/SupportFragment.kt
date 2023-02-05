@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
+import androidx.browser.customtabs.CustomTabsIntent
 import com.deal.bytee.R
 
 class SupportFragment : BaseFragment(R.layout.fragment_support) {
@@ -25,6 +26,11 @@ class SupportFragment : BaseFragment(R.layout.fragment_support) {
             val intent = Intent(Intent.ACTION_DIAL)
             intent.data = Uri.parse("tel:+918068380699")
             startActivity(intent)
+        }
+        view.findViewById<Button>(R.id.btnPrivacyPolicy).setOnClickListener {
+            val url = "https://www.dealbyte.in/privacy.html"
+            val customTabIntent = CustomTabsIntent.Builder().build()
+            customTabIntent.launchUrl(requireContext(), Uri.parse(url))
         }
         return view
     }

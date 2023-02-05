@@ -7,14 +7,33 @@
     android:background="@color/background"
     tools:context=".fragment.SupportFragment">
 
-    <Button
-        android:id="@+id/btnCall"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Call Support"
-        android:textSize="@dimen/_18sdp"
-        android:background="@color/main"
-        android:textColor="@color/white"
-        android:padding="32dp"/>
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnCall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Call Support"
+            android:textSize="@dimen/_18sdp"
+            android:background="@color/main"
+            android:textColor="@color/white"
+            android:padding="32dp"/>
+
+        <Button
+            android:id="@+id/btnPrivacyPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Privacy Policy"
+            android:textSize="@dimen/_18sdp"
+            android:background="@color/main"
+            android:textColor="@color/white"
+            android:padding="32dp"
+            android:layout_marginTop="32dp"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
